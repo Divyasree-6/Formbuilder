@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Builder - CloudBankin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M19 18C19 19.1 18.1 20 17 20H7C5.9 20 5 19.1 5 18V6C5 4.9 5.9 4 7 4H17C18.1 4 19 4.9 19 6V18Z" fill="#4F46E5"/>
+                </svg>
+                <span>CloudBankin</span>
+            </div>
+            
+            <div class="section">
+                <h3>Selected Layout</h3>
+                <div class="layout-options">
+                    <label class="radio-option">
+                        <input type="radio" name="layout" value="classic" checked>
+                        <span>Classic</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="layout" value="card">
+                        <span>Card</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Search Elements</h3>
+                <div class="search-box">
+                    <input type="text" id="searchElements" placeholder="Search types...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                
+                <div class="elements-list" id="elementsList">
+                    <div class="element-item" draggable="true" data-type="heading">
+                        <span class="icon" style="background: #10b981;">📝</span>
+                        <span>Heading</span>
+                    </div>
+                    <div class="element-item" draggable="true" data-type="name">
+                        <span class="icon" style="background: #6366f1;">👤</span>
+                        <span>Name</span>
+                    </div>
+                    <div class="element-item" draggable="true" data-type="address">
+                        <span class="icon" style="background: #9ca3af;">📋</span>
+                        <span>Address</span>
+                    </div>
+                    <div class="element-item" draggable="true" data-type="email">
+                        <span class="icon" style="background: #fbbf24;">✉️</span>
+                        <span>Email</span>
+                    </div>
+                    <div class="element-item" draggable="true" data-type="phone">
+                        <span class="icon" style="background: #6b7280;">📞</span>
+                        <span>Phone</span>
+                    </div>
+                    <div class="element-item" draggable="true" data-type="dob">
+                        <span class="icon" style="background: #6366f1;">📅</span>
+                        <span>Date Of Birth</span>
+                    </div>
+                    <div class="element-item" draggable="true" data-type="image-upload">
+                        <span class="icon" style="background: #8b5cf6;">🖼️</span>
+                        <span>Image Upload</span>
+                    </div>
+                    <div class="element-item" draggable="true" data-type="image-caption">
+                        <span class="icon" style="background: #a855f7;">💬</span>
+                        <span>Image Caption</span>
+                    </div>
+                    <div class="element-item" draggable="true" data-type="signature">
+                        <span class="icon" style="background: #ef4444;">✍️</span>
+                        <span>Signature</span>
+                    </div>
+                    <div class="element-item" draggable="true" data-type="dropdown">
+                        <span class="icon" style="background: #8b5cf6;">📊</span>
+                        <span>Drop Down</span>
+                    </div>
+                    <div class="element-item" draggable="true" data-type="rating">
+                        <span class="icon" style="background: #ec4899;">⭐</span>
+                        <span>Rating</span>
+                    </div>
+                    <div class="element-item" draggable="true" data-type="radio">
+                        <span class="icon" style="background: #6b7280;">⚪</span>
+                        <span>Radio</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="tabs">
+                    <button class="tab active">Build</button>
+                    <button class="tab">Customize</button>
+                    <button class="tab">Publish</button>
+                </div>
+                <div class="header-right">
+                    <span class="form-title">Untitled</span>
+                    <span class="badge">Free</span>
+                    <button class="preview-btn">👁️ Preview</button>
+                </div>
+            </header>
+
+            <div class="form-canvas" id="formCanvas">
+                <div class="logo-upload">+ ADD YOUR LOGO</div>
+                
+                <div class="form-content">
+                    <h2>Personal Information</h2>
+                    <p class="subtitle">Please enter your details below</p>
+
+                    <div class="form-field">
+                        <label>Full Name</label>
+                        <div class="name-group">
+                            <input type="text" placeholder="First Name">
+                            <input type="text" placeholder="Last Name">
+                        </div>
+                    </div>
+
+                    <div class="form-field field-item" data-field-id="dob-1">
+                        <label>DOB<span class="required">*</span></label>
+                        <div class="dob-group">
+                            <select>
+                                <option>Date</option>
+                            </select>
+                            <select>
+                                <option>Month</option>
+                            </select>
+                            <select>
+                                <option>Year</option>
+                            </select>
+                        </div>
+                        <div class="field-actions">
+                            <button class="action-btn settings-btn" title="Settings">⚙️</button>
+                            <button class="action-btn copy-btn" title="Copy">📋</button>
+                            <button class="action-btn delete-btn" title="Delete">🗑️</button>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="">
+                    </div>
+
+                    <div class="form-field">
+                        <label>Upload Image<span class="required">*</span></label>
+                        <div class="upload-area">
+                            <p>📎 Drag and Drop file here or <a href="#">Choose file</a></p>
+                            <small>Supported formats: JPEG, PNG, PDF.</small>
+                            <small>Maximum size: 2 MB</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-page">+ ADD NEW PAGE HERE</div>
+            </div>
+
+            <button class="scroll-top" id="scrollTop">↑<br>Go to top</button>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
